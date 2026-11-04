@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; background: #f6f7fb; color: #222; }
+    h1 { margin-bottom: 4px; }
+    .sub { color: #666; margin-top: 0; }
+    form, .task-item { background: #fff; border-radius: 10px; padding: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    input, textarea, button { font: inherit; padding: 8px; border-radius: 6px; border: 1px solid #ccc; }
+    button { cursor: pointer; background: #3b5bdb; color: #fff; border: none; }
+    button.secondary { background: #868e96; }
+    button.delete-task { background: #e03131; }
+    #task-list { display: flex; flex-direction: column; gap: 10px; }
+    .task-item.done .task-title { text-decoration: line-through; color: #888; }
+    .task-title { margin: 0 0 4px; }
+    .task-description { margin: 0 0 6px; color: #444; }
+    .task-status { font-size: .9em; color: #555; }
+    .actions { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+    #status-message { min-height: 1.2em; margin: 8px 0; }
+    #status-message.error { color: #e03131; }
+    #status-message.ok { color: #2b8a3e; }
+  </style>
+</head>
+<body>
+  <h1>Task Manager</h1>
+  <p class="sub">Student ID: <span id="student-id">73174</span></p>
+
+  <form id="task-form">
+    <input id="task-title" type="text" placeholder="Task title" required>
+    <textarea id="task-description" placeholder="Task description (optional)"></textarea>
+    <button id="task-submit" type="submit">Add task</button>
+    <button id="cancel-edit" type="button" class="secondary" hidden>Cancel edit</button>
+  </form>
+
+  <p id="status-message"></p>
+
+  <div id="task-list"></div>
+
+  <p><a id="contribution-link" href="contribution.html">Team Contribution page</a></p>
+
+  <script src="app.js"></script>
+</body>
+</html>
